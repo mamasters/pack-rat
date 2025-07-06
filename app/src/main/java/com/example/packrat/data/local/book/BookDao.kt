@@ -1,4 +1,4 @@
-package com.example.packrat.data.local
+package com.example.packrat.data.local.book
 
 import androidx.room.Dao
 import androidx.room.Delete
