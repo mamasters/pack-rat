@@ -5,28 +5,29 @@ import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
 import com.example.packrat.data.local.entities.MarketingItem
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MarketingItemDao {
 
     // Get all queries
     @Query("SELECT * FROM marketing_item_table ORDER BY id ASC")
-    suspend fun getAllMarketingItemsByID(): List<MarketingItem>
+    suspend fun getAllMarketingItemsByID(): Flow<List<MarketingItem>>
 
     @Query("SELECT * FROM marketing_item_table ORDER BY itemName ASC")
-    suspend fun getAllMarketingItemsByName(): List<MarketingItem>
+    suspend fun getAllMarketingItemsByName(): Flow<List<MarketingItem>>
 
     @Query("SELECT * FROM marketing_item_table ORDER BY associatedProgram ASC")
-    suspend fun getAllMarketingItemsByProgram(): List<MarketingItem>
+    suspend fun getAllMarketingItemsByProgram(): Flow<List<MarketingItem>>
 
     @Query("SELECT * FROM marketing_item_table ORDER BY supplier ASC")
-    suspend fun getAllMarketingItemsBySupplier(): List<MarketingItem>
+    suspend fun getAllMarketingItemsBySupplier(): Flow<List<MarketingItem>>
 
     @Query("SELECT * FROM marketing_item_table ORDER BY cost ASC")
-    suspend fun getAllMarketingItemsByCost(): List<MarketingItem>
+    suspend fun getAllMarketingItemsByCost(): Flow<List<MarketingItem>>
 
     @Query("SELECT * FROM marketing_item_table ORDER BY assignedTo ASC")
-    suspend fun getAllMarketingItemsByAssignedTo(): List<MarketingItem>
+    suspend fun getAllMarketingItemsByAssignedTo(): Flow<List<MarketingItem>>
 
     // CRUD
     @Upsert
