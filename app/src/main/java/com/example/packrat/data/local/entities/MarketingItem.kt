@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.packrat.data.local.interfaces.InventoryItem
 
+// TODO Add indices to improve performance of queries
 @Entity(tableName = "marketing_item_table")
 data class MarketingItem (
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
